@@ -1,0 +1,1507 @@
+{
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "prompt_type": "error_aware",
+  "total_problems": 164,
+  "pass_at_1": 53.04878048780488,
+  "error_counts": {
+    "syntax_error": 77,
+    "pass": 87,
+    "runtime_error": 0,
+    "incomplete_code": 0,
+    "timeout": 0
+  },
+  "error_percentages": {
+    "pass": 53.04878048780488,
+    "syntax_error": 46.95121951219512,
+    "runtime_error": 0.0,
+    "incomplete_code": 0.0,
+    "timeout": 0.0
+  },
+  "successful_problems": [
+    2,
+    3,
+    4,
+    7,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    19,
+    22,
+    23,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    37,
+    38,
+    41,
+    42,
+    44,
+    45,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    57,
+    60,
+    62,
+    67,
+    70,
+    72,
+    74,
+    76,
+    77,
+    81,
+    83,
+    85,
+    88,
+    89,
+    90,
+    92,
+    95,
+    97,
+    101,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    110,
+    113,
+    114,
+    116,
+    117,
+    119,
+    120,
+    121,
+    122,
+    123,
+    126,
+    128,
+    130,
+    131,
+    134,
+    138,
+    139,
+    140,
+    144,
+    145,
+    146,
+    149,
+    150,
+    151,
+    152,
+    157,
+    159
+  ],
+  "failed_problems": {
+    "syntax_error": [
+      0,
+      1,
+      5,
+      6,
+      8,
+      9,
+      14,
+      17,
+      18,
+      20,
+      21,
+      24,
+      25,
+      26,
+      28,
+      36,
+      39,
+      40,
+      43,
+      46,
+      47,
+      56,
+      58,
+      59,
+      61,
+      63,
+      64,
+      65,
+      66,
+      68,
+      69,
+      71,
+      73,
+      75,
+      78,
+      79,
+      80,
+      82,
+      84,
+      86,
+      87,
+      91,
+      93,
+      94,
+      96,
+      98,
+      99,
+      100,
+      102,
+      109,
+      111,
+      112,
+      115,
+      118,
+      124,
+      125,
+      127,
+      129,
+      132,
+      133,
+      135,
+      136,
+      137,
+      141,
+      142,
+      143,
+      147,
+      148,
+      153,
+      154,
+      155,
+      156,
+      158,
+      160,
+      161,
+      162,
+      163
+    ],
+    "runtime_error": [],
+    "incomplete_code": [],
+    "timeout": []
+  },
+  "detailed_results": [
+    {
+      "task_id": "HumanEval/0",
+      "problem_num": 0,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    for i in range(len(numbers)):\n    for j in range(i + 1, len(numbers)):\n        if abs(numbers[i] - numbers[j]) < threshold:\n            return True\n    return False",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/1",
+      "problem_num": 1,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    import re\n\n    def separate_paren_groups(paren_string: str) -> List[str]:\n    paren_string = re.sub(r'\\s+', '', paren_string)\n    stack = []\n    result = []\n\n    for char in paren_string:\n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            if stack:\n                stack.pop()\n            else:\n                raise ValueError(\"Unmatched closing parenthesis\")\n        if not stack:\n            result.append(''.join(stack))\n\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/2",
+      "problem_num": 2,
+      "status": "pass",
+      "error": "",
+      "completion": "    return number % 1",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/3",
+      "problem_num": 3,
+      "status": "pass",
+      "error": "",
+      "completion": "    balance = 0\n    for op in operations:\n        balance += op\n        if balance < 0:\n            return True\n    return False",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/4",
+      "problem_num": 4,
+      "status": "pass",
+      "error": "",
+      "completion": "    import math\n\n    total_sum = sum(numbers)\n    count = len(numbers)\n    mean = total_sum / count\n\n    absolute_differences = [abs(x - mean) for x in numbers]\n    mad = sum(absolute_differences) / count\n    return mad",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/5",
+      "problem_num": 5,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'while' statement on line 14 (<unknown>, line 15)",
+      "completion": "    result = []\n    i = 0\n    while i < len(numbers):\n    result.append(numbers[i])\n    if i + 1 < len(numbers):\n        result.append(delimiter)\n    i += 1\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/6",
+      "problem_num": 6,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    import re\n\n    def parse_nested_parens(paren_string: str) -> List[int]:\n    depths = []\n    current_depth = 0\n    for char in paren_string:\n        if char == '(':\n            current_depth += 1\n            depths.append(current_depth)\n        elif char == ')':\n            current_depth -= 1\n    return depths",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/7",
+      "problem_num": 7,
+      "status": "pass",
+      "error": "",
+      "completion": "    return [s for s in strings if substring in s]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/8",
+      "problem_num": 8,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 15 (<unknown>, line 16)",
+      "completion": "    sum = 0\n    product = 1\n    for num in numbers:\n    sum += num\n    product *= num\n    return sum, product",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/9",
+      "problem_num": 9,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    res = []\n    cur_max = numbers[0]\n    for num in numbers:\n    if num > cur_max:\n        cur_max = num\n    res.append(cur_max)\n    return res",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/10",
+      "problem_num": 10,
+      "status": "pass",
+      "error": "",
+      "completion": "    # Find the longest suffix of the string that is a palindrome\n    i = len(string)\n    while i > 0 and string[i-1] != string[i]:\n        i -= 1\n\n    # If the entire string is a palindrome, return it as is\n    if i == 0:\n        return string\n\n    # Reverse the prefix before the palindrome suffix\n    prefix = string[:i][::-1]\n\n    # Return the original string concatenated with its reversed prefix\n    return string + prefix",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/11",
+      "problem_num": 11,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = ''\n    for i in range(len(a)):\n        if a[i] == b[i]:\n            result += '0'\n        else:\n            result += '1'\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/12",
+      "problem_num": 12,
+      "status": "pass",
+      "error": "",
+      "completion": "    if not strings:\n        return None\n\n    max_length = 0\n    longest_string = \"\"\n\n    for string in strings:\n        if len(string) > max_length:\n            max_length = len(string)\n            longest_string = string\n\n    return longest_string",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/13",
+      "problem_num": 13,
+      "status": "pass",
+      "error": "",
+      "completion": "    while b != 0:\n        temp = b\n        b = a % b\n        a = temp\n    return a",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/14",
+      "problem_num": 14,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 11 (<unknown>, line 12)",
+      "completion": "    result = []\n    for i in range(1, len(string) + 1):\n    result.append(string[:i])\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/15",
+      "problem_num": 15,
+      "status": "pass",
+      "error": "",
+      "completion": "    return \" \".join(str(i) for i in range(n + 1))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/16",
+      "problem_num": 16,
+      "status": "pass",
+      "error": "",
+      "completion": "    return len(set(string.lower()))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/17",
+      "problem_num": 17,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 20 (<unknown>, line 21)",
+      "completion": "    import re\n\n    def parse_music(music_string: str) -> List[int]:\n    pattern = r'o|o\\||\\.|\\.'\n    notes = re.findall(pattern, music_string)\n    return [len(note) * 4 if note == 'o' else len(note) * 2 if note == 'o|' else len(note) for note in notes]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/18",
+      "problem_num": 18,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'while' statement on line 16 (<unknown>, line 17)",
+      "completion": "    count = 0\n    index = 0\n\n    while index < len(string):\n    if string[index:index+len(substring)] == substring:\n        count += 1\n        index += 1\n    else:\n        index += 1\n\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/19",
+      "problem_num": 19,
+      "status": "pass",
+      "error": "",
+      "completion": "    numbers = [int(num) for num in numbers.split()]\n    numbers.sort()\n    return ' '.join(str(num) for num in numbers)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/20",
+      "problem_num": 20,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 15 (<unknown>, line 16)",
+      "completion": "    numbers.sort()\n    closest_pair = (numbers[0], numbers[1])\n    for i in range(1, len(numbers) - 1):\n    if abs(numbers[i] - numbers[i + 1]) < abs(closest_pair[0] - closest_pair[1]):\n        closest_pair = (numbers[i], numbers[i + 1])\n    return closest_pair",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/21",
+      "problem_num": 21,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 13 (<unknown>, line 14)",
+      "completion": "    import math\n\n    def rescale_to_unit(numbers: List[float]) -> List[float]:\n    min_val = min(numbers)\n    max_val = max(numbers)\n    return [(num - min_val) / (max_val - min_val) for num in numbers]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/22",
+      "problem_num": 22,
+      "status": "pass",
+      "error": "",
+      "completion": "    return [value for value in values if isinstance(value, int)]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/23",
+      "problem_num": 23,
+      "status": "pass",
+      "error": "",
+      "completion": "    count = 0\n    for char in string:\n        count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/24",
+      "problem_num": 24,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 9 (<unknown>, line 10)",
+      "completion": "    for i in range(n-1, 0, -1):\n    if n % i == 0:\n        return i",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/25",
+      "problem_num": 25,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 18 (<unknown>, line 19)",
+      "completion": "    import math\n\n    def factorize(n: int) -> List[int]:\n    factors = []\n    # Divide n by 2 until n is odd\n    while n % 2 == 0:\n        factors.append(2)\n        n //= 2\n\n    # Check for odd factors starting from 3\n    for i in range(3, int(math.sqrt(n)) + 1, 2):\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n\n    # If n is a prime number greater than 2\n    if n > 2:\n        factors.append(n)\n\n    return factors",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/26",
+      "problem_num": 26,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 12 (<unknown>, line 13)",
+      "completion": "    result = []\n    for number in numbers:\n    if number not in result:\n        result.append(number)\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/27",
+      "problem_num": 27,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = ''\n    for char in string:\n        if char.islower():\n            result += char.upper()\n        elif char.isupper():\n            result += char.lower()\n        else:\n            result += char\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/28",
+      "problem_num": 28,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    result = \"\"\n    for s in strings:\n    result += s\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/29",
+      "problem_num": 29,
+      "status": "pass",
+      "error": "",
+      "completion": "    return [s for s in strings if s.startswith(prefix)]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/30",
+      "problem_num": 30,
+      "status": "pass",
+      "error": "",
+      "completion": "    return [x for x in l if x > 0]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/31",
+      "problem_num": 31,
+      "status": "pass",
+      "error": "",
+      "completion": "    if n <= 1:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    i = 3\n    while i * i <= n:\n        if n % i == 0:\n            return False\n        i += 2\n    return True",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/32",
+      "problem_num": 32,
+      "status": "pass",
+      "error": "",
+      "completion": "    left, right = 0, max(abs(coeff) for coeff in xs)\n    while left < right:\n        mid = (left + right) / 2\n        if poly(xs, mid) > 0:\n            left = mid\n        else:\n            right = mid\n    return left",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/33",
+      "problem_num": 33,
+      "status": "pass",
+      "error": "",
+      "completion": "    l = l[::3] + sorted(l[3::3])",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/34",
+      "problem_num": 34,
+      "status": "pass",
+      "error": "",
+      "completion": "    l = set(l)\n    return sorted(list(l))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/35",
+      "problem_num": 35,
+      "status": "pass",
+      "error": "",
+      "completion": "    max_element = lambda l: max(l)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/36",
+      "problem_num": 36,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 14 (<unknown>, line 15)",
+      "completion": "    count = 0\n    for i in range(1, n):\n    if i % 11 == 0 or i % 13 == 0:\n        count += str(i).count('7')\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/37",
+      "problem_num": 37,
+      "status": "pass",
+      "error": "",
+      "completion": "    l[::2] = sorted(l[::2])",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/38",
+      "problem_num": 38,
+      "status": "pass",
+      "error": "",
+      "completion": "    groups = [s[i:i+3] for i in range(0, len(s), 3)]  # Split string into groups of 3 characters\n    decoded_groups = [(group[-1] + group[:-1]) if len(group) > 2 else group for group in groups]  # Cycle elements in each group\n    return \"\".join(decoded_groups)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/39",
+      "problem_num": 39,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 18 (<unknown>, line 19)",
+      "completion": "    def prime_fib(n: int):\n    def is_prime(num: int) -> bool:\n        if num <= 1:\n            return False\n        for i in range(2, int(math.sqrt(num)) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    fib_sequence = [0, 1]\n    while len(fib_sequence) < n:\n        next_num = fib_sequence[-1] + fib_sequence[-2]\n        fib_sequence.append(next_num)\n\n    prime_fibs = [num for num in fib_sequence if is_prime(num)]\n    return prime_fibs[n-1]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/40",
+      "problem_num": 40,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 21 (<unknown>, line 22)",
+      "completion": "    for i in range(len(l)):\n    for j in range(i + 1, len(l)):\n        for k in range(j + 1, len(l)):\n            if l[i] + l[j] + l[k] == 0:\n                return True\n    return False",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/41",
+      "problem_num": 41,
+      "status": "pass",
+      "error": "",
+      "completion": "    collision_count = 0\n    for i in range(n):\n        for j in range(i + 1, n):\n            collision_count += 1\n    return collision_count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/42",
+      "problem_num": 42,
+      "status": "pass",
+      "error": "",
+      "completion": "    l = [x + 1 for x in l]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/43",
+      "problem_num": 43,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 20 (<unknown>, line 21)",
+      "completion": "    for i in range(len(l)):\n    for j in range(i + 1, len(l)):\n        if l[i] + l[j] == 0:\n            return True\n    return False",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/44",
+      "problem_num": 44,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = ''\n    while x > 0:\n        remainder = x % base\n        result = str(remainder) + result\n        x //= base\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/45",
+      "problem_num": 45,
+      "status": "pass",
+      "error": "",
+      "completion": "    return 0.5 * a * h",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/46",
+      "problem_num": 46,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 19 (<unknown>, line 20)",
+      "completion": "    def fib4(n: int):\n    if n == 0 or n == 1:\n        return 0\n    elif n == 2:\n        return 2\n    else:\n        a, b, c, d = 0, 0, 2, 0\n        for _ in range(4, n+1):\n            a, b, c, d = b, c, d, a + b + c + d\n        return d",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/47",
+      "problem_num": 47,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'if' statement on line 13 (<unknown>, line 14)",
+      "completion": "    l.sort()\n    n = len(l)\n    if n % 2 == 0:\n    return (l[n // 2 - 1] + l[n // 2]) / 2\n    else:\n    return l[n // 2]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/48",
+      "problem_num": 48,
+      "status": "pass",
+      "error": "",
+      "completion": "    return text == text[::-1]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/49",
+      "problem_num": 49,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = 1\n    while n > 0:\n        if n % 2 == 1:\n            result = (result * n) % p\n        n //= 2\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/50",
+      "problem_num": 50,
+      "status": "pass",
+      "error": "",
+      "completion": "    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/51",
+      "problem_num": 51,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = \"\"\n    for char in text:\n        if char.lower() not in \"aeiou\":\n            result += char\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/52",
+      "problem_num": 52,
+      "status": "pass",
+      "error": "",
+      "completion": "    return all(x < t for x in l)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/53",
+      "problem_num": 53,
+      "status": "pass",
+      "error": "",
+      "completion": "    return x + y",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/54",
+      "problem_num": 54,
+      "status": "pass",
+      "error": "",
+      "completion": "    return sorted(s0) == sorted(s1)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/55",
+      "problem_num": 55,
+      "status": "pass",
+      "error": "",
+      "completion": "    if n <= 1:\n        return n\n    else:\n        a, b = 0, 1\n        for _ in range(2, n + 1):\n            a, b = b, a + b\n        return b",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/56",
+      "problem_num": 56,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 18 (<unknown>, line 19)",
+      "completion": "    stack = []\n    for char in brackets:\n    if char == '<':\n        stack.append(char)\n    elif char == '>':\n        if not stack:\n            return False\n        stack.pop()\n    return len(stack) == 0",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/57",
+      "problem_num": 57,
+      "status": "pass",
+      "error": "",
+      "completion": "    return l == sorted(l) or l == sorted(l, reverse=True)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/58",
+      "problem_num": 58,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    res = []\n    for i in l1:\n    if i in l2 and i not in res:\n        res.append(i)\n    res.sort()\n    return res",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/59",
+      "problem_num": 59,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'while' statement on line 12 (<unknown>, line 13)",
+      "completion": "    i = 2\n    while i * i <= n:\n    while n % i == 0:\n        n //= i\n    i += 1\n    return n",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/60",
+      "problem_num": 60,
+      "status": "pass",
+      "error": "",
+      "completion": "    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/61",
+      "problem_num": 61,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 18 (<unknown>, line 19)",
+      "completion": "    stack = []\n    for char in brackets:\n    if char == '(':\n        stack.append(char)\n    elif char == ')':\n        if not stack:\n            return False\n        stack.pop()\n    return len(stack) == 0",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/62",
+      "problem_num": 62,
+      "status": "pass",
+      "error": "",
+      "completion": "    return [i * x for i, x in enumerate(xs)][1:]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/63",
+      "problem_num": 63,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 18 (<unknown>, line 19)",
+      "completion": "    def fibfib(n: int):\n    if n < 2:\n        return 0\n    elif n == 2:\n        return 1\n    else:\n        a, b, c = 0, 0, 1\n        for _ in range(3, n + 1):\n            a, b, c = b, c, a + b + c\n        return c",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/64",
+      "problem_num": 64,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 20 (<unknown>, line 21)",
+      "completion": "    count = 0\n    for char in s:\n    if char.lower() in \"aeiou\":\n        count += 1\n    if s.endswith('y'):\n    count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/65",
+      "problem_num": 65,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'if' statement on line 16 (<unknown>, line 17)",
+      "completion": "    x = str(x)\n    length = len(x)\n    shift %= length\n\n    if shift == 0:\n    return x[::-1]\n    else:\n    return x[-shift:] + x[:-shift]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/66",
+      "problem_num": 66,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 17 (<unknown>, line 18)",
+      "completion": "    sum = 0\n    for char in s:\n    if char.isupper():\n        sum += ord(char)\n    return sum",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/67",
+      "problem_num": 67,
+      "status": "pass",
+      "error": "",
+      "completion": "    m = n - s.split()[0].split(' ')[0]\n    return m",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/68",
+      "problem_num": 68,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 37 (<unknown>, line 38)",
+      "completion": "    def pluck(arr):\n    if not arr:\n        return []\n\n    smallest_even = float('inf')\n    smallest_index = -1\n\n    for i, val in enumerate(arr):\n        if val % 2 == 0 and val < smallest_even:\n            smallest_even = val\n            smallest_index = i\n\n    if smallest_index == -1:\n        return []\n\n    return [smallest_even, smallest_index]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/69",
+      "problem_num": 69,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 14 (<unknown>, line 15)",
+      "completion": "    for i in range(1, max(lst) + 1):\n    if lst.count(i) >= i:\n        return i\n    return -1",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/70",
+      "problem_num": 70,
+      "status": "pass",
+      "error": "",
+      "completion": "    lst.sort()\n    return lst[::-1]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/71",
+      "problem_num": 71,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 16 (<unknown>, line 18)",
+      "completion": "    import math\n\n    def triangle_area(a, b, c):\n    # Check if the sides form a valid triangle\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n\n    # Calculate the semi-perimeter\n    s = (a + b + c) / 2\n\n    # Calculate the area using Heron's formula\n    area = math.sqrt(s * (s - a) * (s - b) * (s - c))\n\n    # Round the area to 2 decimal points\n    return round(area, 2)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/72",
+      "problem_num": 72,
+      "status": "pass",
+      "error": "",
+      "completion": "    return q == q[::-1] and sum(q) <= w",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/73",
+      "problem_num": 73,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 14 (<unknown>, line 15)",
+      "completion": "    def smallest_change(arr):\n    left, right = 0, len(arr) - 1\n    changes = 0\n\n    while left < right:\n        if arr[left] != arr[right]:\n            changes += 1\n        left += 1\n        right -= 1\n\n    return changes",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/74",
+      "problem_num": 74,
+      "status": "pass",
+      "error": "",
+      "completion": "    if len(lst1) == len(lst2):\n        return lst1\n    elif sum(len(s) for s in lst1) < sum(len(s) for s in lst2):\n        return lst1\n    else:\n        return lst2",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/75",
+      "problem_num": 75,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 11 (<unknown>, line 12)",
+      "completion": "    def is_multiply_prime(a):\n    def is_prime(n):\n        if n <= 1:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    count = 0\n    for i in range(2, a // 2 + 1):\n        if a % i == 0:\n            if is_prime(i) and is_prime(a // i):\n                count += 1\n    return count == 2",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/76",
+      "problem_num": 76,
+      "status": "pass",
+      "error": "",
+      "completion": "    return x == n ** int(math.log(x, n))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/77",
+      "problem_num": 77,
+      "status": "pass",
+      "error": "",
+      "completion": "    return abs(a) ** (1/3).is_integer()",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/78",
+      "problem_num": 78,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 22 (<unknown>, line 23)",
+      "completion": "    count = 0\n    for digit in num:\n    if digit == '2' or digit == '3' or digit == '5' or digit == '7' or digit == 'B' or digit == 'D':\n        count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/79",
+      "problem_num": 79,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    def decimal_to_binary(decimal):\n    if decimal == 0:\n        return \"db0db\"\n\n    binary_digits = []\n    while decimal > 0:\n        remainder = decimal % 2\n        binary_digits.append(str(remainder))\n        decimal //= 2\n\n    binary_digits.reverse()\n    binary_string = ''.join(binary_digits)\n    return f\"db{binary_string}db\"",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/80",
+      "problem_num": 80,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    def is_happy(s):\n    n = len(s)\n    if n < 3:\n        return False\n    for i in range(n-2):\n        if s[i] == s[i+1] or s[i] == s[i+2] or s[i+1] == s[i+2]:\n            return False\n    return True",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/81",
+      "problem_num": 81,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = []\n    for gpa in grades:\n        if gpa == 4.0:\n            result.append('A+')\n        elif gpa > 3.7:\n            result.append('A')\n        elif gpa > 3.3:\n            result.append('A-')\n        elif gpa > 3.0:\n            result.append('B+')\n        elif gpa > 2.7:\n            result.append('B')\n        elif gpa > 2.3:\n            result.append('B-')\n        elif gpa > 2.0:\n            result.append('C+')\n        elif gpa > 1.7:\n            result.append('C')\n        elif gpa > 1.3:\n            result.append('C-')\n        elif gpa > 1.0:\n            result.append('D+')\n        elif gpa > 0.7:\n            result.append('D')\n        elif gpa > 0.0:\n            result.append('D-')\n        else:\n            result.append('E')\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/82",
+      "problem_num": 82,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 12 (<unknown>, line 13)",
+      "completion": "    def prime_length(string):\n    length = len(string)\n    if length <= 1:\n        return False\n    for i in range(2, int(length**0.5) + 1):\n        if length % i == 0:\n            return False\n    return True",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/83",
+      "problem_num": 83,
+      "status": "pass",
+      "error": "",
+      "completion": "    if n == 1:\n        return 1\n    else:\n        return 2 * (9 ** (n - 1))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/84",
+      "problem_num": 84,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 17 (<unknown>, line 18)",
+      "completion": "    def solve(N):\n    total_sum = sum(int(digit) for digit in str(N))\n    return bin(total_sum)[2:]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/85",
+      "problem_num": 85,
+      "status": "pass",
+      "error": "",
+      "completion": "    total = 0\n    for i in range(1, len(lst), 2):\n        if lst[i] % 2 == 0:\n            total += lst[i]\n    return total",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/86",
+      "problem_num": 86,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 16 (<unknown>, line 17)",
+      "completion": "    def anti_shuffle(s):\n    return ' '.join(sorted(word) for word in s.split())",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/87",
+      "problem_num": 87,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 26 (<unknown>, line 27)",
+      "completion": "    lst = [[1,2,3,4,5,6],[1,2,3,4,1,6],[1,2,3,4,5,1]]\n    x = 1\n    result = []\n    for i in range(len(lst)):\n    for j in range(len(lst[i])):\n        if lst[i][j] == x:\n            result.append((i, len(lst[i]) - 1 - j))\n    result.sort(key=lambda x: (x[0], -x[1]))\n    print(result)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/88",
+      "problem_num": 88,
+      "status": "pass",
+      "error": "",
+      "completion": "    array.sort(reverse=(sum(array[0], array[-1]) % 2 == 0))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/89",
+      "problem_num": 89,
+      "status": "pass",
+      "error": "",
+      "completion": "    s = s.replace(\"a\", \"c\").replace(\"b\", \"d\").replace(\"e\", \"g\").replace(\"f\", \"i\").replace(\"g\", \"k\").replace(\"h\", \"m\").replace(\"i\", \"o\").replace(\"j\", \"q\").replace(\"k\", \"s\").replace(\"l\", \"u\").replace(\"m\", \"w\").replace(\"n\", \"y\").replace(\"o\", \"z\").replace(\"p\", \"a\").replace(\"q\", \"b\").replace(\"r\", \"e\").replace(\"s\", \"f\").replace(\"t\", \"h\").replace(\"u\", \"j\").replace(\"v\", \"k\").replace(\"w\", \"l\").replace(\"x\", \"n\").replace(\"y\", \"p\").replace(\"z\", \"q\")\n    return s",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/90",
+      "problem_num": 90,
+      "status": "pass",
+      "error": "",
+      "completion": "    lst.sort()\n    return lst[1] if len(lst) > 1 else None",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/91",
+      "problem_num": 91,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 16 (<unknown>, line 17)",
+      "completion": "    count = 0\n    for sentence in S.split('.?!'):\n    if sentence.strip().startswith('I'):\n        count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/92",
+      "problem_num": 92,
+      "status": "pass",
+      "error": "",
+      "completion": "    return isinstance(x, int) and isinstance(y, int) and isinstance(z, int) and (x == y + z or y == x + z or z == x + y)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/93",
+      "problem_num": 93,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 17 (<unknown>, line 18)",
+      "completion": "    def encode(message):\n    vowels = \"aeiouAEIOU\"\n    encoded_message = \"\"\n\n    for char in message:\n        if char.isalpha():\n            # Swap case\n            if char.islower():\n                char = char.upper()\n            else:\n                char = char.lower()\n\n            # Replace vowels with the letter two places ahead\n            if char in vowels:\n                index = vowels.index(char)\n                new_char = chr((index + 2) % 26 + ord('a'))\n                encoded_message += new_char\n            else:\n                encoded_message += char\n\n    return encoded_message",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/94",
+      "problem_num": 94,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 16 (<unknown>, line 17)",
+      "completion": "    def skjkasdkd(lst):\n    def is_prime(n):\n        if n <= 1:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    max_prime = 0\n    for num in lst:\n        if is_prime(num):\n            max_prime = max(max_prime, num)\n\n    return sum(int(digit) for digit in str(max_prime))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/95",
+      "problem_num": 95,
+      "status": "pass",
+      "error": "",
+      "completion": "    return all(isinstance(key, str) for key in dict.keys()) and all(isinstance(key, str) for key in dict.keys())",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/96",
+      "problem_num": 96,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 14 (<unknown>, line 15)",
+      "completion": "    def count_up_to(n):\n    def is_prime(num):\n        if num <= 1:\n            return False\n        for i in range(2, int(num**0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    primes = []\n    for i in range(2, n):\n        if is_prime(i):\n            primes.append(i)\n    return primes",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/97",
+      "problem_num": 97,
+      "status": "pass",
+      "error": "",
+      "completion": "    return abs(a % 10) * abs(b % 10)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/98",
+      "problem_num": 98,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    count = 0\n    for i in range(1, len(s), 2):\n    if s[i] in 'AEIOU':\n        count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/99",
+      "problem_num": 99,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 21 (<unknown>, line 22)",
+      "completion": "    def closest_integer(value):\n    num = float(value)\n    if num > 0:\n        return int(num + 0.5)\n    else:\n        return int(num - 0.5)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/100",
+      "problem_num": 100,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'while' statement on line 20 (<unknown>, line 21)",
+      "completion": "    stones_per_level = []\n    current_stones = n\n\n    while current_stones > 0:\n    stones_per_level.append(current_stones)\n    # Determine the next number based on whether the current number is odd or even\n    if current_stones % 2 == 0:\n        current_stones += 1\n    else:\n        current_stones -= 2\n\n    return stones_per_level",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/101",
+      "problem_num": 101,
+      "status": "pass",
+      "error": "",
+      "completion": "    s = s.replace(\",\", \" \").split()\n    return s",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/102",
+      "problem_num": 102,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'if' statement on line 12 (<unknown>, line 13)",
+      "completion": "    if x % 2 == 0:\n    return x\n    elif y % 2 == 0:\n    return y\n    else:\n    if x < y:\n        return x + 1\n    else:\n        return y - 1",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/103",
+      "problem_num": 103,
+      "status": "pass",
+      "error": "",
+      "completion": "    return bin(round((n + m) / 2))[2:]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/104",
+      "problem_num": 104,
+      "status": "pass",
+      "error": "",
+      "completion": "    unique = []\n    for num in x:\n        if all(int(digit) % 2 != 0 for digit in str(num)):\n            unique.append(num)\n    return sorted(unique)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/105",
+      "problem_num": 105,
+      "status": "pass",
+      "error": "",
+      "completion": "    arr.sort()\n    arr.reverse()\n    result = [str(i) if i >= 1 and i <= 9 else '' for i in arr]\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/106",
+      "problem_num": 106,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = []\n    for i in range(1, n + 1):\n        if i % 2 == 0:\n            result.append(i * (i + 1) // 2)\n        else:\n            result.append(sum(range(1, i + 1)))\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/107",
+      "problem_num": 107,
+      "status": "pass",
+      "error": "",
+      "completion": "    count_even = 0\n    count_odd = 0",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/108",
+      "problem_num": 108,
+      "status": "pass",
+      "error": "",
+      "completion": "    count_nums = lambda arr: len([num for num in arr if sum(int(digit) for digit in str(abs(num))) > 0])",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/109",
+      "problem_num": 109,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 30 (<unknown>, line 31)",
+      "completion": "    def move_one_ball(arr):\n    if len(arr) == 0:\n        return True\n\n    # Check if the array is already sorted\n    if arr == sorted(arr):\n        return True\n\n    # Find the first element that is greater than its next element\n    for i in range(len(arr) - 1):\n        if arr[i] > arr[i + 1]:\n            # Perform a right shift operation\n            arr = arr[-1:] + arr[:-1]\n            break\n\n    # Check if the array is now sorted\n    return arr == sorted(arr)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/110",
+      "problem_num": 110,
+      "status": "pass",
+      "error": "",
+      "completion": "    if len(set(lst1)) == len(lst1):  # Check if all elements in lst1 are unique\n        return \"YES\"  # All elements in lst1 are already even\n    else:\n        return \"NO\"  # Not all elements in lst1 are even",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/111",
+      "problem_num": 111,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 18 (<unknown>, line 19)",
+      "completion": "    from collections import Counter\n\n    def histogram(test):\n    counts = Counter(test)\n    max_count = max(counts.values())\n    return {letter: count for letter, count in counts.items() if count == max_count}",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/112",
+      "problem_num": 112,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 15 (<unknown>, line 16)",
+      "completion": "    s = list(s)\n    for char in c:\n    while char in s:\n        s.remove(char)\n    result = ''.join(s)\n    is_palindrome = result == result[::-1]\n    return result, is_palindrome",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/113",
+      "problem_num": 113,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = []\n    for num_str in lst:\n        odd_count = sum(1 for char in num_str if int(char) % 2 != 0)\n        result.append(f\"the number of odd elements {odd_count}n the str{n} of the input.\")\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/114",
+      "problem_num": 114,
+      "status": "pass",
+      "error": "",
+      "completion": "    min_sum = float('inf')\n    current_sum = 0\n\n    for num in nums:\n        current_sum += num\n        if current_sum < min_sum:\n            min_sum = current_sum\n        if current_sum > 0:\n            current_sum = 0\n\n    return min_sum",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/115",
+      "problem_num": 115,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 39 (<unknown>, line 40)",
+      "completion": "    import math\n    def max_fill(grid, capacity):\n    total_water = sum(sum(row) for row in grid)\n    return math.ceil(total_water / capacity)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/116",
+      "problem_num": 116,
+      "status": "pass",
+      "error": "",
+      "completion": "    arr.sort(key=lambda x: (bin(x).count('1'), x))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/117",
+      "problem_num": 117,
+      "status": "pass",
+      "error": "",
+      "completion": "    words = s.split()\n    result = [word for word in words if len([char for char in word if char.isalpha() and char.lower() not in 'aeiou']) == n]\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/118",
+      "problem_num": 118,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 19 (<unknown>, line 20)",
+      "completion": "    vowels = 'aeiouAEIOU'\n    for i in range(len(word)-2, 0, -1):\n    if word[i] in vowels and word[i-1] not in vowels and word[i+1] not in vowels:\n        return word[i]\n    return ''",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/119",
+      "problem_num": 119,
+      "status": "pass",
+      "error": "",
+      "completion": "    stack = []\n    for char in lst[0] + lst[1]:\n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            if not stack:\n                return 'No'\n            stack.pop()\n    return 'Yes' if not stack else 'No'",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/120",
+      "problem_num": 120,
+      "status": "pass",
+      "error": "",
+      "completion": "    arr.sort(reverse=True)\n    return arr[:k]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/121",
+      "problem_num": 121,
+      "status": "pass",
+      "error": "",
+      "completion": "    total = 0\n    for i in range(1, len(lst), 2):\n        if lst[i] % 2 != 0:\n            total += lst[i]\n    return total",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/122",
+      "problem_num": 122,
+      "status": "pass",
+      "error": "",
+      "completion": "    sum_of_elements = sum([num for num in arr[:k] if abs(num) < 100])",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/123",
+      "problem_num": 123,
+      "status": "pass",
+      "error": "",
+      "completion": "    odd_numbers = []\n    while n != 1:\n        if n % 2 != 0:\n            odd_numbers.append(n)\n        n = 3 * n + 1 if n % 2 else n // 2\n    odd_numbers.sort()\n    return odd_numbers",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/124",
+      "problem_num": 124,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 25 (<unknown>, line 27)",
+      "completion": "    import re\n\n    def valid_date(date):\n    # Regular expression pattern for validating date\n    pattern = r\"^(0[1-9]|1[0-2]|[12]\\d)-([012]\\d|3[01])-\\d{4}$\"\n\n    # Check if the date matches the pattern\n    if re.match(pattern, date):\n        # Split the date into month, day, and year\n        month, day, year = map(int, date.split('-'))\n\n        # Validate the month\n        if month < 1 or month > 12:\n            return False\n\n        # Validate the day based on the month\n        if month in [1, 3, 5, 7, 8, 10, 12]:\n            if day < 1 or day > 31:\n                return False\n        elif month in [4, 6, 9, 11]:\n            if day < 1 or day > 30:\n                return False\n        elif month == 2:\n            if day < 1 or day > 29:\n                return False\n\n        return True\n    else:\n        return False",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/125",
+      "problem_num": 125,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    import re\n\n    def split_words(txt):\n    if ' ' in txt:\n        return txt.split()\n    elif ',' in txt:\n        return txt.split(',')\n    else:\n        return sum(1 for char in txt if char.islower() and (ord(char) - ord('a')) % 2 != 0)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/126",
+      "problem_num": 126,
+      "status": "pass",
+      "error": "",
+      "completion": "    if len(lst) <= 1:\n        return True\n\n    for i in range(1, len(lst)):\n        if lst[i] < lst[i-1]:\n            return False\n\n    # Check for duplicates\n    for i in range(len(lst) - 1):\n        if lst[i] == lst[i+1]:\n            return False\n\n    return True",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/127",
+      "problem_num": 127,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 23 (<unknown>, line 24)",
+      "completion": "    def intersection(interval1, interval2):\n    start_max = max(interval1[0], interval2[0])\n    end_min = min(interval1[1], interval2[1])\n\n    if start_max > end_min:\n        return \"NO\"\n\n    intersection_length = end_min - start_max + 1\n\n    if intersection_length <= 1:\n        return \"NO\"\n\n    for i in range(2, int(intersection_length**0.5) + 1):\n        if intersection_length % i == 0:\n            return \"NO\"\n\n    return \"YES\"",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/128",
+      "problem_num": 128,
+      "status": "pass",
+      "error": "",
+      "completion": "    if len(arr) == 0:\n        return None\n\n    sign_product = 1\n    magnitude_sum = 0\n\n    for num in arr:\n        if num == 0:\n            return 0\n\n        sign_product *= (-1) ** num\n        magnitude_sum += abs(num)\n\n    return magnitude_sum * sign_product",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/129",
+      "problem_num": 129,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 35 (<unknown>, line 36)",
+      "completion": "    from collections import deque\n\n    def minPath(grid, k):\n    n = len(grid)\n    directions = [(0, 1), (1, 0), (-1, 0), (0, -1)]\n\n    # Initialize the queue with starting positions and their scores\n    queue = deque([(i, j, 0, [grid[i][j]]) for i in range(n) for j in range(n)])\n    visited = set()\n\n    while queue:\n        x, y, score, path = queue.popleft()\n\n        if (x, y, score) in visited:\n            continue\n\n        visited.add((x, y, score))\n\n        if score == k:\n            return path\n\n        for dx, dy in directions:\n            nx, ny = x + dx, y + dy\n            if 0 <= nx < n and 0 <= ny < n:\n                new_path = path + [grid[nx][ny]]\n                new_score = score + 1\n                queue.append((nx, ny, new_score, new_path))\n\n    This solution uses a breadth-first search (BFS) approach to explore all possible paths of length `k` in the grid. It starts from every cell and explores all possible moves (up, down, left, right) until it finds a path of length `k`. The BFS ensures that the first path found is the one with the smallest score, which corresponds to the smallest lexicographical order. The solution returns the path as a list of integers.",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/130",
+      "problem_num": 130,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = []\n    if n == 0:\n        return result\n    elif n == 1:\n        result.append(3)\n        return result\n    else:\n        result.extend([3, 2])\n        i = 2\n        while i <= n:\n            if i % 2 == 0:\n                result.append(i // 2)\n            else:\n                result.append(result[i-1] + result[i-2] + result[i+1])\n            i += 1\n        return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/131",
+      "problem_num": 131,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = 1\n    has_odd_digit = False\n    while n > 0:\n        digit = n % 10\n        if digit % 2 != 0:\n            result *= digit\n            has_odd_digit = True\n        n //= 10\n    return result if has_odd_digit else 0",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/132",
+      "problem_num": 132,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 16 (<unknown>, line 17)",
+      "completion": "    def is_nested(string):\n    stack = []\n    has_nested = False\n\n    for char in string:\n        if char == '[':\n            stack.append(char)\n        elif char == ']':\n            if stack:\n                stack.pop()\n                if stack:  # Check if there's still an opening bracket left\n                    has_nested = True\n            else:\n                return False  # No matching opening bracket found\n\n    return has_nested",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/133",
+      "problem_num": 133,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 19 (<unknown>, line 20)",
+      "completion": "    import math\n\n    def sum_squares(lst):\n    return sum(math.ceil(x**2) for x in lst)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/134",
+      "problem_num": 134,
+      "status": "pass",
+      "error": "",
+      "completion": "    return txt[-1].isalpha() and txt.split()[-1] != txt[-1]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/135",
+      "problem_num": 135,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    for i in range(len(arr)-1, 0, -1):\n    if arr[i] > arr[i-1]:\n        return i\n    return -1",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/136",
+      "problem_num": 136,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    def largest_smallest_integers(lst):\n    neg = [x for x in lst if x < 0]\n    pos = [x for x in lst if x > 0]\n\n    a = max(neg) if neg else None\n    b = min(pos) if pos else None\n\n    return (a, b)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/137",
+      "problem_num": 137,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 15 (<unknown>, line 16)",
+      "completion": "    def compare_one(a, b):\n    if isinstance(a, str) and isinstance(b, str):\n        return max(float(a), float(b))\n    elif isinstance(a, str) or isinstance(b, str):\n        return a if isinstance(a, str) else b\n    else:\n        return max(a, b)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/138",
+      "problem_num": 138,
+      "status": "pass",
+      "error": "",
+      "completion": "    return n % 2 != 0 or n < 8 or n > 20",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/139",
+      "problem_num": 139,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = 1\n    for i in range(1, n + 1):\n        result *= i\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/140",
+      "problem_num": 140,
+      "status": "pass",
+      "error": "",
+      "completion": "    text = text.replace(' ', '_').replace('__', '-')",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/141",
+      "problem_num": 141,
+      "status": "syntax_error",
+      "error": "unterminated string literal (detected at line 20) (<unknown>, line 20)",
+      "completion": "    import re\n\n    def file_name_check(file_name):\n    pattern = r'^[a-zA-Z][a-zA-Z0-9]{0,2}\\.[txt|exe|dll]$\n    return \"Yes\" if re.match(pattern, file_name) else \"No\"",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/142",
+      "problem_num": 142,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 17 (<unknown>, line 18)",
+      "completion": "    sum = 0\n    for i in range(len(lst)):\n    if i % 3 == 0:\n        sum += lst[i]**2\n    elif i % 4 == 0:\n        sum += lst[i]**3\n    return sum",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/143",
+      "problem_num": 143,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 23 (<unknown>, line 24)",
+      "completion": "    def words_in_sentence(sentence):\n    def is_prime(n):\n        if n < 2:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    words = sentence.split()\n    prime_words = [word for word in words if is_prime(len(word))]\n    return ' '.join(prime_words)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/144",
+      "problem_num": 144,
+      "status": "pass",
+      "error": "",
+      "completion": "    x_numerator, x_denominator = map(int, x.split('/'))\n    n_numerator, n_denominator = map(int, n.split('/'))\n\n    simplified_numerator = x_numerator * n_numerator\n    simplified_denominator = x_denominator * n_denominator\n\n    return simplified_numerator % simplified_denominator == 0",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/145",
+      "problem_num": 145,
+      "status": "pass",
+      "error": "",
+      "completion": "    nums.sort(key=lambda x: (sum(int(digit) for digit in str(abs(x))), nums.index))",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/146",
+      "problem_num": 146,
+      "status": "pass",
+      "error": "",
+      "completion": "    count = 0\n    for num in nums:\n        if num > 10 and str(num)[0] in '13579' and str(num)[-1] in '13579':\n            count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/147",
+      "problem_num": 147,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 18 (<unknown>, line 19)",
+      "completion": "    count = 0\n    for i in range(1, n):\n    for j in range(i+1, n):\n        for k in range(j+1, n):\n            if (a[i] + a[j] + a[k]) % 3 == 0:\n                count += 1\n    return count",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/148",
+      "problem_num": 148,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 19 (<unknown>, line 20)",
+      "completion": "    def bf(planet1, planet2):\n    planets = [\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\"]\n    index1 = planets.index(planet1)\n    index2 = planets.index(planet2)\n\n    if index1 < index2:\n        return tuple(planets[index1 + 1:index2])\n    else:\n        return tuple(planets[index2 + 1:index1])",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/149",
+      "problem_num": 149,
+      "status": "pass",
+      "error": "",
+      "completion": "    lst = [s for s in lst if len(s) % 2 == 0]\n    return sorted(lst)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/150",
+      "problem_num": 150,
+      "status": "pass",
+      "error": "",
+      "completion": "    if n <= 1:\n        return y\n    elif n <= 3:\n        return x\n    elif n % 2 == 0 or n % 3 == 0:\n        return y\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return y\n        i += 6\n    return x",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/151",
+      "problem_num": 151,
+      "status": "pass",
+      "error": "",
+      "completion": "    sum_of_squares = sum(x**2 for x in lst if isinstance(x, int) and x > 0)\n    return sum_of_squares",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/152",
+      "problem_num": 152,
+      "status": "pass",
+      "error": "",
+      "completion": "    result = []\n    for i in range(len(game)):\n        if game[i] == guess[i]:\n            result.append(0)\n        else:\n            result.append(abs(game[i] - guess[i]))\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/153",
+      "problem_num": 153,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 23 (<unknown>, line 24)",
+      "completion": "    max_strength = float('-inf')\n    strongest_extension = None\n\n    for extension in extensions:\n    cap = sum(1 for char in extension if char.isupper())\n    sm = sum(1 for char in extension if char.islower())\n    strength = cap - sm\n\n    if strength > max_strength:\n        max_strength = strength\n        strongest_extension = extension\n\n    return f\"{class_name}.{strongest_extension}\"",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/154",
+      "problem_num": 154,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    for i in range(len(b)):\n    rotated_b = b[i:] + b[:i]\n    if rotated_b in a:\n        return True\n    return False",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/155",
+      "problem_num": 155,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'while' statement on line 13 (<unknown>, line 14)",
+      "completion": "    count_even = 0\n    count_odd = 0\n\n    while num != 0:\n    digit = num % 10\n    if digit % 2 == 0:\n        count_even += 1\n    else:\n        count_odd += 1\n    num //= 10\n\n    return (count_even, count_odd)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/156",
+      "problem_num": 156,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 14 (<unknown>, line 15)",
+      "completion": "    def int_to_mini_roman(number):\n    roman_numerals = {\n        1000: 'm', 900: 'cm', 500: 'd', 400: 'cd',\n        100: 'c', 90: 'xc', 50: 'l', 40: 'xl',\n        10: 'x', 9: 'ix', 5: 'v', 4: 'iv', 1: 'i'\n    }\n    result = ''\n    for value, symbol in roman_numerals.items():\n        while number >= value:\n            result += symbol\n            number -= value\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/157",
+      "problem_num": 157,
+      "status": "pass",
+      "error": "",
+      "completion": "    return a**2 + b**2 == c**2",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/158",
+      "problem_num": 158,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 16 (<unknown>, line 17)",
+      "completion": "    max_word = \"\"\n    max_unique_chars = 0\n\n    for word in words:\n    unique_chars = set(word)\n    if len(unique_chars) > max_unique_chars or (len(unique_chars) == max_unique_chars and word < max_word):\n        max_word = word\n        max_unique_chars = len(unique_chars)\n\n    return max_word",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/159",
+      "problem_num": 159,
+      "status": "pass",
+      "error": "",
+      "completion": "    if remaining < need:\n        return [number + remaining, 0]\n    else:\n        return [number + need, remaining - need]",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/160",
+      "problem_num": 160,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 29 (<unknown>, line 30)",
+      "completion": "    result = 0\n    for i in range(len(operand)):\n    if operator[i] == '+':\n        result += operand[i]\n    elif operator[i] == '-':\n        result -= operand[i]\n    elif operator[i] == '*':\n        result *= operand[i]\n    elif operator[i] == '//':\n        result //= operand[i]\n    elif operator[i] == '**':\n        result **= operand[i]\n    return result",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/161",
+      "problem_num": 161,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 15 (<unknown>, line 16)",
+      "completion": "    s = list(s)\n    for i in range(len(s)):\n    if s[i].isalpha():\n        s[i] = s[i].swapcase()\n    else:\n        s[i] = s[i]\n    s.reverse()\n    return ''.join(s)",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/162",
+      "problem_num": 162,
+      "status": "syntax_error",
+      "error": "expected an indented block after function definition on line 12 (<unknown>, line 13)",
+      "completion": "    import hashlib\n\n    def string_to_md5(text):\n    if text == '':\n        return None\n    return hashlib.md5(text.encode()).hexdigest()",
+      "prompt_type": "error_aware"
+    },
+    {
+      "task_id": "HumanEval/163",
+      "problem_num": 163,
+      "status": "syntax_error",
+      "error": "expected an indented block after 'for' statement on line 13 (<unknown>, line 14)",
+      "completion": "    for i in range(min(a, b), max(a, b) + 1):\n    if i % 2 == 0:\n        print(i)",
+      "prompt_type": "error_aware"
+    }
+  ]
+}
