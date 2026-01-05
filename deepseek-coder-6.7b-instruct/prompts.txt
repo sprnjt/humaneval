@@ -1,0 +1,72 @@
+================================================================================
+PROMPTS USED IN HUMANEVAL EVALUATION NOTEBOOKS
+================================================================================
+Model: deepseek-ai/deepseek-coder-6.7b-instruct
+================================================================================
+
+================================================================================
+NOTEBOOK 1: final-humaneval-deepseek-6-7b-instruct.ipynb
+================================================================================
+Type: Original Prompt (Control Baseline)
+Purpose: Simple, standard code completion prompt without error-aware modifications.
+
+PROMPT FORMAT:
+--------------
+### Instruction:
+Complete the following Python function.
+
+{problem_prompt}
+
+### Response:
+
+================================================================================
+
+================================================================================
+NOTEBOOK 2: final-humaneval-deepseek-6-7b-instruct-erroraware.ipynb
+================================================================================
+Type: Error-Aware Prompt (Detailed Version)
+Purpose: Improve Pass@1 by explicitly instructing the model to avoid common errors.
+
+PROMPT FORMAT:
+--------------
+### Instruction:
+Complete the following Python function.
+
+CRITICAL REQUIREMENTS:
+1. Use proper Python syntax - always use '->' ReturnType' (not '- ReturnType') for return type annotations
+2. Output ONLY the function body code, no explanations or test code after
+3. Ensure all parentheses, brackets, and quotes are properly closed
+4. Use exact function/variable names as given - no typos
+5. Return proper types matching the function signature
+
+{problem_prompt}
+
+### Response:
+
+================================================================================
+
+================================================================================
+NOTEBOOK 3: final-humaneval-deepseek-6-7b-instruct-error-aware-compact.ipynb
+================================================================================
+Type: Error-Aware Prompt (Compact Version)
+Purpose: Improve Pass@1 using a concise one-line prompt to avoid common errors.
+
+PROMPT FORMAT:
+--------------
+### Instruction:
+Complete this Python function using correct syntax (use -> for return types, close all brackets, exact names, code only.
+
+{problem_prompt}
+
+### Response:
+
+================================================================================
+
+NOTES:
+------
+- All notebooks use the DeepSeek Coder instruction format with "### Instruction:" and "### Response:" markers.
+- The {problem_prompt} placeholder is replaced with the actual HumanEval problem prompt for each evaluation.
+- The Original Prompt serves as the control baseline for comparison.
+- The Error-Aware prompts aim to reduce syntax errors, runtime errors, and incomplete code errors.
+
+================================================================================

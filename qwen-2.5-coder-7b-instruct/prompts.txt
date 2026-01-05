@@ -1,0 +1,46 @@
+=============================================================================
+PROMPTS USED IN NOTEBOOKS
+=============================================================================
+
+==================================
+NOTEBOOK 1: final-humaneval-qwen-7b.ipynb
+==================================
+
+TYPE: Baseline Prompt (Standard)
+
+SYSTEM PROMPT:
+"You are a helpful coding assistant. Complete the given Python function accurately. Only provide the function body code, no explanations."
+
+USER PROMPT TEMPLATE:
+"Complete the following Python function. Only output the function body code that should be added after the function signature. Do not include the function signature or any explanations.
+
+{problem_prompt}"
+
+Note: Uses Qwen2.5-Coder ChatML format via tokenizer.apply_chat_template()
+
+=============================================================================
+
+==================================
+NOTEBOOK 2: final-humaneval-qwen-7b-erroraware.ipynb
+==================================
+
+TYPE: Error-Aware Prompt (Enhanced)
+
+SYSTEM PROMPT:
+"You are a helpful coding assistant. Complete the given Python function accurately. Only provide the function body code wrapped in ```python code blocks, no explanations. Ensure proper indentation for all nested structures."
+
+USER PROMPT TEMPLATE:
+"Complete the following Python function. Only output the function body code that should be added after the function signature. Do not include the function signature or any explanations.
+
+CRITICAL REQUIREMENTS:
+1. Output ONLY valid Python code wrapped in ```python and ``` markers
+2. Use proper indentation (4 spaces per level) for all nested structures
+3. Do NOT include the function signature - only the body
+4. Do NOT include any explanations or comments outside the code block
+5. Ensure all control structures (if/for/while) have properly indented bodies
+
+{problem_prompt}"
+
+Note: Uses Qwen2.5-Coder ChatML format via tokenizer.apply_chat_template()
+
+=============================================================================

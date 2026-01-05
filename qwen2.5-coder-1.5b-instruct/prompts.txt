@@ -1,0 +1,52 @@
+==========================================================================
+PROMPTS USED IN HUMANEVAL EVALUATION NOTEBOOKS
+Model: Qwen/Qwen2.5-Coder-1.5B-Instruct
+==========================================================================
+
+==========================================================================
+NOTEBOOK 1: final-humaneval-qwen-1-5b.ipynb (Baseline Prompt)
+==========================================================================
+
+SYSTEM PROMPT:
+--------------
+You are a helpful coding assistant. Complete the given Python function accurately. Only provide the function body code, no explanations.
+
+USER INSTRUCTION TEMPLATE:
+--------------------------
+Complete the following Python function. Only output the function body code that should be added after the function signature. Do not include the function signature or any explanations.
+
+{problem_prompt}
+
+--------------------------------------------------------------------------
+
+
+==========================================================================
+NOTEBOOK 2: final-humaneval-qwen-1-5b-error-aware.ipynb (Error-Aware Prompt)
+==========================================================================
+
+SYSTEM PROMPT:
+--------------
+You are a helpful coding assistant. Complete the given Python function accurately. Only provide the function body code wrapped in ```python code blocks, no explanations. Ensure proper indentation for all nested structures.
+
+USER INSTRUCTION TEMPLATE:
+--------------------------
+Complete the following Python function. Only output the function body code that should be added after the function signature. Do not include the function signature or any explanations.
+
+CRITICAL REQUIREMENTS:
+1. Output ONLY valid Python code wrapped in ```python and ``` markers
+2. Use proper indentation (4 spaces per level) for all nested structures
+3. Do NOT include the function signature - only the body
+4. Do NOT include any explanations or comments outside the code block
+5. Ensure all control structures (if/for/while) have properly indented bodies
+
+{problem_prompt}
+
+--------------------------------------------------------------------------
+
+
+==========================================================================
+NOTES
+==========================================================================
+- Both notebooks use the Qwen2.5-Coder ChatML format via tokenizer.apply_chat_template()
+- The error-aware prompt includes explicit indentation and formatting guidelines to reduce syntax errors
+- {problem_prompt} is replaced with the actual HumanEval problem prompt containing the function signature and docstring

@@ -1,0 +1,58 @@
+================================================================================
+HYPERPARAMETERS FOR CODE GENERATION - HumanEval Evaluation
+================================================================================
+
+Models Evaluated:
+  1. DeepSeek Coder 6.7B Instruct (deepseek-ai/deepseek-coder-6.7b-instruct)
+  2. Qwen 2.5 Coder 7B Instruct (Qwen/Qwen2.5-Coder-7B-Instruct)
+  3. Qwen 2.5 Coder 1.5B Instruct (Qwen/Qwen2.5-Coder-1.5B-Instruct)
+
+================================================================================
+GENERATION HYPERPARAMETERS (Same for all models)
+================================================================================
+
+Parameter               Value                   Notes
+---------------------------------------------------------------------------
+max_new_tokens          512                     Maximum number of new tokens to generate
+do_sample               False                   Greedy decoding (deterministic) for pass@1
+temperature             None                    Not used since do_sample=False
+top_p                   None                    Not used since do_sample=False
+pad_token_id            tokenizer.eos_token_id  Uses the EOS token for padding
+eos_token_id            tokenizer.eos_token_id  Uses the model's EOS token
+
+================================================================================
+QUANTIZATION CONFIGURATION (Same for all models)
+================================================================================
+
+BitsAndBytesConfig:
+  - load_in_4bit:           True
+  - bnb_4bit_compute_dtype: torch.float16
+  - bnb_4bit_use_double_quant: True
+  - bnb_4bit_quant_type:    "nf4"
+
+Python Code:
+---------------------------------------------------------------------------
+quantization_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4"
+)
+
+================================================================================
+MODEL-SPECIFIC PROMPT FORMATS
+================================================================================
+
+1. DeepSeek Coder 6.7B Instruct:
+   - Uses DeepSeek Coder instruction format
+   - Format: "### Instruction:\n{instruction}\n\n### Response:\n"
+
+2. Qwen 2.5 Coder 7B Instruct:
+   - Uses ChatML format via tokenizer.apply_chat_template()
+   - System message: "You are a helpful coding assistant..."
+
+3. Qwen 2.5 Coder 1.5B Instruct:
+   - Uses ChatML format via tokenizer.apply_chat_template()
+   - System message: "You are a helpful coding assistant..."
+
+================================================================================
