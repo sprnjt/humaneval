@@ -1,0 +1,13 @@
+GPU used for all: NVIDIA Tesla T4 (Kaggle)
+
+Humaneval-qwen-1.5b: 12m 11s
+
+Humaneval-qwen-1.5b-error-aware: 15m 30s
+
+Humaneval-qwen-7b: 15m 51s
+
+Humaneval-qwen-7b-erroraware: 18m 54s
+
+Humaneval-deepseek-6.7b-instruct: 1h 42m 42s
+
+Humaneval-deepseek-6.7b-instruct-erroraware: 1h 41m 31s
